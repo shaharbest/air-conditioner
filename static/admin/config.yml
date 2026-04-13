@@ -1,0 +1,169 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: assets/images
+public_folder: images
+
+collections:
+  - name: "pages"
+    label: "Page Sections"
+    files:
+
+      - label: "Hero Banner"
+        name: "banner"
+        file: "data/en/banner.yml"
+        fields:
+          - label: "Banner"
+            name: "banner"
+            widget: "object"
+            fields:
+              - { label: "Enable", name: "enable", widget: "boolean" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Content", name: "content", widget: "text" }
+              - label: "Button"
+                name: "button"
+                widget: "object"
+                fields:
+                  - { label: "Enable", name: "enable", widget: "boolean" }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Link", name: "link", widget: "string" }
+
+      - label: "Services"
+        name: "service"
+        file: "data/en/service.yml"
+        fields:
+          - label: "Service"
+            name: "service"
+            widget: "object"
+            fields:
+              - { label: "Enable", name: "enable", widget: "boolean" }
+              - { label: "Section Title", name: "title", widget: "string" }
+              - label: "Service Items"
+                name: "service_item"
+                widget: "list"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Icon (themify)", name: "icon", widget: "string" }
+                  - { label: "Description", name: "content", widget: "text" }
+
+      - label: "About"
+        name: "about"
+        file: "data/en/about.yml"
+        fields:
+          - label: "About"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Enable", name: "enable", widget: "boolean" }
+              - { label: "Section Title", name: "title", widget: "string" }
+              - label: "Items"
+                name: "about_item"
+                widget: "list"
+                fields:
+                  - { label: "Icon (themify)", name: "icon", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Content", name: "content", widget: "text" }
+
+      - label: "Features"
+        name: "feature"
+        file: "data/en/feature.yml"
+        fields:
+          - label: "Feature"
+            name: "feature"
+            widget: "object"
+            fields:
+              - { label: "Enable", name: "enable", widget: "boolean" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Content", name: "content", widget: "text" }
+              - label: "Feature Items"
+                name: "feature_item"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Icon (themify)", name: "icon", widget: "string" }
+                  - { label: "Content", name: "content", widget: "text" }
+
+      - label: "Call to Action"
+        name: "cta"
+        file: "data/en/cta.yml"
+        fields:
+          - label: "CTA"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Enable", name: "enable", widget: "boolean" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Content", name: "content", widget: "text" }
+              - label: "Button"
+                name: "button"
+                widget: "object"
+                fields:
+                  - { label: "Enable", name: "enable", widget: "boolean" }
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Link", name: "link", widget: "string" }
+
+      - label: "Fun Facts / Counters"
+        name: "funfacts"
+        file: "data/en/funfacts.yml"
+        fields:
+          - label: "Funfacts"
+            name: "funfacts"
+            widget: "object"
+            fields:
+              - { label: "Enable", name: "enable", widget: "boolean" }
+              - label: "Counter Items"
+                name: "counter_item"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Icon (themify)", name: "icon", widget: "string" }
+                  - { label: "Count", name: "count", widget: "string" }
+
+      - label: "Testimonials"
+        name: "testimonial"
+        file: "data/en/testimonial.yml"
+        fields:
+          - label: "Testimonial"
+            name: "testimonial"
+            widget: "object"
+            fields:
+              - { label: "Enable", name: "enable", widget: "boolean" }
+              - label: "Testimonial Items"
+                name: "testimonial_item"
+                widget: "list"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Date", name: "date", widget: "string" }
+                  - { label: "Content", name: "content", widget: "text" }
+
+      - label: "Contact"
+        name: "contact"
+        file: "data/en/contact.yml"
+        fields:
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Enable", name: "enable", widget: "boolean" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - { label: "Content", name: "content", widget: "text" }
+              - label: "Contact Details"
+                name: "contact_list"
+                widget: "list"
+                fields:
+                  - { label: "Icon (themify)", name: "icon", widget: "string" }
+                  - { label: "Info", name: "info", widget: "string" }
+
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/english/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
