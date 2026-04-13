@@ -3,11 +3,11 @@ banner:
   bg_image_webp: images/backgrounds/hero-area.webp
   bg_image: images/backgrounds/hero-area.jpg
   icon: ""
-  title: Yehuda Peer Ha Gever
-  content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
-    excepturi. At recusandae sit perferendis autem,iste tempora nostrum numquam
-    sapiente!
+  title: Breathe Cleaner Air. Live Safer.
+  content: Philadelphia's go-to team for air duct, dryer vent, and chimney cleaning.
+    We remove the buildup that harms your air quality, raises your energy bills, and
+    puts your home at risk — fast, thorough, and at a fair price.
   button:
     enable: true
-    label: Explore Us
+    label: See Our Services
     link: "#services"

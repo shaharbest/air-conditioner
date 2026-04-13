@@ -1,34 +1,40 @@
 ################################# Service #################################
 service:
-  enable : true
-  title : Our Services
-  service_item :
-    # service item loop
-    - name : WordPress Theme
-      icon : ti-world # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus.Nullam iaculis arcu at mauris dapibus consectetur.
-      
-    # service item loop
-    - name : Responsive Design
-      icon : ti-layout # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus.Nullam iaculis arcu at mauris dapibus consectetur.
-      
-    # service item loop
-    - name : Media &amp; Advertisement
-      icon : ti-blackboard # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus.Nullam iaculis arcu at mauris dapibus consectetur.
-      
-    # service item loop
-    - name : Graphic Design
-      icon : ti-palette # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus.Nullam iaculis arcu at mauris dapibus consectetur.
-      
-    # service item loop
-    - name : Apps Development
-      icon : ti-package # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus.Nullam iaculis arcu at mauris dapibus consectetur.
-      
-    # service item loop
-    - name : Networking
-      icon : ti-pulse # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus.Nullam iaculis arcu at mauris dapibus consectetur.
+  enable: true
+  title: Our Services
+  service_item:
+    - name: Air Duct Cleaning
+      icon: ti-wind
+      content: Years of dust, allergens, and debris build up inside your HVAC ductwork
+        without you ever seeing it. Our thorough cleaning improves airflow, reduces
+        energy costs, and delivers noticeably cleaner air throughout your home.
+
+    - name: Dryer Vent Cleaning
+      icon: ti-reload
+      content: Lint-clogged dryer vents are the leading cause of home fires — and
+        most homeowners don't know theirs is blocked. We clear the full vent line
+        so your dryer runs safely, efficiently, and lasts longer.
+
+    - name: Chimney Cleaning & Sweeping
+      icon: ti-home
+      content: Creosote buildup inside your chimney is a serious fire and carbon
+        monoxide hazard. Our certified chimney sweeps clean your flue top to bottom
+        so you can enjoy your fireplace with complete peace of mind.
+
+    - name: Chimney Inspection & Repair
+      icon: ti-search
+      content: We inspect chimney liners, caps, crowns, and masonry for cracks,
+        gaps, and water damage — then handle minor repairs on the spot before small
+        problems become expensive ones.
+
+    - name: HVAC System Inspection
+      icon: ti-settings
+      content: Our full-system checkup covers filters, coils, blower components,
+        and airflow to catch issues early. A well-maintained HVAC system keeps your
+        family comfortable and your utility bills in check.
+
+    - name: Indoor Air Quality Assessment
+      icon: ti-stats-up
+      content: Not sure what you're breathing? We assess your home for dust, mold
+        spores, and other airborne pollutants, then recommend a targeted cleaning
+        plan to bring your indoor air quality back to a healthy level.

@@ -1,11 +1,13 @@
 ############################# call to action ##############################
 cta:
-  enable : true
-  bg_image : "images/backgrounds/bg-white-wall.jpg"
-  bg_image_webp : "images/backgrounds/bg-white-wall.webp"
-  title : "Great Design & Incredible Features"
-  content : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tenetur odio impedit incidunt? Omnis accusantium ea reiciendis, fugit commodi nostrum."
+  enable: true
+  bg_image: "images/backgrounds/bg-white-wall.jpg"
+  bg_image_webp: "images/backgrounds/bg-white-wall.webp"
+  title: "Ready for Cleaner Air & a Safer Home?"
+  content: "Don't wait for a fire hazard or an allergy flare-up to take action.
+    Contact Philly Green Clean today for a free estimate — we serve Philadelphia
+    and the surrounding area, and we're ready to schedule your service fast."
   button:
-    enable : true
-    label : "Start a project with us"
-    link : "#contact"
+    enable: true
+    label: "Get a Free Estimate"
+    link: "#contact"

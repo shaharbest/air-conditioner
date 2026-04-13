@@ -1,6 +1,6 @@
 ################################# Default configuration ###################
 baseURL = "https://danielle.best/"
-title = "Meghna"
+title = "Philly Green Clean"
 theme = "meghna-hugo"
 # Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
 timeZone = "America/New_York"
@@ -96,8 +96,8 @@ link = "plugins/google-map/map.js"
 [params]
 logo = "images/logo.png"
 # Meta data
-description = "Responsive Multipurpose Parallax Hugo Template"
-author = "Themefisher"
+description = "Philadelphia's trusted experts in air duct cleaning, dryer vent cleaning, and chimney cleaning. Serving Philly and surrounding areas."
+author = "Philly Green Clean LLC"
 # Google Analytics
 google_analytics_id = "" # Your ID
 # post share

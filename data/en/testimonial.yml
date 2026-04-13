@@ -1,26 +1,31 @@
 ################################# Testimonial #########################
 testimonial:
-  enable : true
-  bg_image : images/backgrounds/bg-testimonial.jpg
-  bg_image_webp : images/backgrounds/bg-testimonial.webp
-  testimonial_item :
-    # testimonial item loop
-    - name : Jonathon Andrew
-      image : images/client/client-1.jpg
-      image_webp : images/client/client-1.webp
-      date : Dec 26, 2018
-      content : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium minima ex, quia error, deserunt voluptatibus repellendus? Incidunt eligendi aliquam repellat molestias, vel sed optio rem odit quis ratione non consequuntur!
-      
-    # testimonial item loop
-    - name : Mark Dinn
-      image : images/client/client-2.jpg
-      image_webp : images/client/client-2.webp
-      date : Dec 26, 2018
-      content : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium minima ex, quia error, deserunt voluptatibus repellendus? Incidunt eligendi aliquam repellat molestias, vel sed optio rem odit quis ratione non consequuntur!
-      
-    # testimonial item loop
-    - name : Lemos Kail
-      image : images/client/client-1.jpg
-      image_webp : images/client/client-1.webp
-      date : Dec 26, 2018
-      content : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium minima ex, quia error, deserunt voluptatibus repellendus? Incidunt eligendi aliquam repellat molestias, vel sed optio rem odit quis ratione non consequuntur!
+  enable: true
+  bg_image: images/backgrounds/bg-testimonial.jpg
+  bg_image_webp: images/backgrounds/bg-testimonial.webp
+  testimonial_item:
+    - name: Karen M.
+      image: images/client/client-1.jpg
+      image_webp: images/client/client-1.webp
+      date: South Philadelphia
+      content: I had no idea how dirty my air ducts were until Philly Green Clean
+        showed me the before-and-after. The technician was professional, on time,
+        and took the time to explain everything. My allergies have been noticeably
+        better since. Highly recommend!
+
+    - name: David R.
+      image: images/client/client-2.jpg
+      image_webp: images/client/client-2.webp
+      date: Roxborough
+      content: Called them after my dryer was taking two cycles to dry a single load.
+        Turned out the vent was completely packed with lint. They cleared it out
+        in under an hour and the difference was immediate. Great service, fair price.
+
+    - name: Michelle T.
+      image: images/client/client-1.jpg
+      image_webp: images/client/client-1.webp
+      date: Chestnut Hill
+      content: Booked a chimney cleaning before the winter season. The team was
+        thorough, neat, and left zero mess behind. They also caught a small crack
+        in the flue liner and fixed it on the spot. This is exactly the kind of
+        local business I want to support.

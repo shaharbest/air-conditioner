@@ -1,27 +1,29 @@
 ############################# feature ###################################
 feature:
-  enable : true
-  image : images/about/about-business-man.jpg
-  image_webp : images/about/about-business-man.webp
-  title : We’re A Digital Design Agency.
-  content : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tempora itaque, autem dolores culpa cum mollitia voluptate nesciunt voluptatibus quasi."
-  feature_item : 
-      # feature item loop
-    - title : SEO Optimized
-      icon : ti-world # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus eos saepe
-      
-      # feature item loop
-    - title : Easy Customization
-      icon : ti-panel # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus eos saepe
+  enable: true
+  image: images/about/about-business-man.jpg
+  image_webp: images/about/about-business-man.webp
+  title: Why Philadelphia Homeowners Choose Us
+  content: "Philly Green Clean was built on one simple idea: every family deserves
+    a home with clean air and safe systems. We bring that commitment to every job
+    in Philadelphia and the surrounding communities."
+  feature_item:
+    - title: Certified Technicians
+      icon: ti-id-badge
+      content: Our team is trained and certified in air duct, dryer vent, and chimney
+        cleaning — so you know the job is done to the highest standard.
 
-      # feature item loop
-    - title : SEO Optimized
-      icon : ti-stats-up # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus eos saepe
-      
-      # feature item loop
-    - title : Easy Customization
-      icon : ti-announcement # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus eos saepe
+    - title: Upfront, Flat-Rate Pricing
+      icon: ti-money
+      content: We quote before we start. No hidden fees, no surprise add-ons. The
+        price we give you is the price you pay.
+
+    - title: Locally Owned & Operated
+      icon: ti-location-pin
+      content: We're a local Philadelphia-area business — not a franchise. When
+        you call us, you talk to someone who actually knows your neighborhood.
+
+    - title: 100% Satisfaction Guarantee
+      icon: ti-thumb-up
+      content: We're not done until you're happy. If you're not satisfied with the
+        results, we'll come back and make it right at no extra charge.
