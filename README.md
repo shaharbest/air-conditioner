@@ -63,7 +63,7 @@ hugo server --buildDrafts
 
 The business owner edits content at:
 ```
-https://fluffy-malasada-57ebc5.netlify.app/admin
+https://danielle.best/admin
 ```
 
 Auth is handled by **DecapBridge** (PKCE OAuth via GitHub). The CMS covers all sections in `data/en/`. Changes are committed directly to the `main` branch, which triggers a Netlify redeploy.
@@ -80,6 +80,26 @@ Netlify auto-deploys on every push to `main`. Build takes ~10s.
 - Publish dir: `public`
 - Hugo version: `0.160.1` (set via `HUGO_VERSION` env var in `netlify.toml`)
 - Submodule strategy: `recursive` (set via `GIT_SUBMODULE_STRATEGY` in `netlify.toml`)
+- Custom domain: `danielle.best` (DNS managed by Netlify — nameservers at `dns1-4.p09.nsone.net`)
+
+### Netlify CLI
+
+```bash
+# Install
+npm install -g netlify-cli
+
+# Authenticate
+netlify login
+
+# Link this repo to the Netlify site (run once per machine)
+netlify link
+
+# Useful commands
+netlify status              # show linked site info
+netlify deploy --prod       # manual deploy (bypass git push)
+netlify open                # open site admin in browser
+netlify logs                # stream deploy/function logs
+```
 
 ## Known issues / gotchas
 
@@ -94,7 +114,6 @@ Netlify auto-deploys on every push to `main`. Build takes ~10s.
 
 - Replace placeholder content in `data/en/` with real business info
 - Replace images in `assets/images/` with real photos
-- Configure custom domain in Netlify
 - Set up Google Analytics 4 + Tag Manager for call tracking
-- Update `config/_default/hugo.toml`: set `title`, `baseURL`, `googleAnalytics`
+- Update `config/_default/hugo.toml`: set `title`, `googleAnalytics`
 - Disable or hide unused sections (portfolio, pricing, skills, team) via `enable: false` in their respective `data/en/*.yml` files
