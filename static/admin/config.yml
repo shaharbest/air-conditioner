@@ -23,168 +23,66 @@ auth:
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 site_url: https://danielle.best
 
-media_folder: assets/images
-public_folder: images
+media_folder: static/images
+public_folder: /images
 
 collections:
-  - name: "pages"
-    label: "Page Sections"
-    files:
-
-      - label: "Hero Banner"
-        name: "banner"
-        file: "data/en/banner.yml"
-        fields:
-          - label: "Banner"
-            name: "banner"
-            widget: "object"
-            fields:
-              - { label: "Enable", name: "enable", widget: "boolean" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Content", name: "content", widget: "text" }
-              - label: "Button"
-                name: "button"
-                widget: "object"
-                fields:
-                  - { label: "Enable", name: "enable", widget: "boolean" }
-                  - { label: "Label", name: "label", widget: "string" }
-                  - { label: "Link", name: "link", widget: "string" }
-
-      - label: "Services"
-        name: "service"
-        file: "data/en/service.yml"
-        fields:
-          - label: "Service"
-            name: "service"
-            widget: "object"
-            fields:
-              - { label: "Enable", name: "enable", widget: "boolean" }
-              - { label: "Section Title", name: "title", widget: "string" }
-              - label: "Service Items"
-                name: "service_item"
-                widget: "list"
-                fields:
-                  - { label: "Name", name: "name", widget: "string" }
-                  - { label: "Icon (themify)", name: "icon", widget: "string" }
-                  - { label: "Description", name: "content", widget: "text" }
-
-      - label: "About"
-        name: "about"
-        file: "data/en/about.yml"
-        fields:
-          - label: "About"
-            name: "about"
-            widget: "object"
-            fields:
-              - { label: "Enable", name: "enable", widget: "boolean" }
-              - { label: "Section Title", name: "title", widget: "string" }
-              - label: "Items"
-                name: "about_item"
-                widget: "list"
-                fields:
-                  - { label: "Icon (themify)", name: "icon", widget: "string" }
-                  - { label: "Title", name: "title", widget: "string" }
-                  - { label: "Content", name: "content", widget: "text" }
-
-      - label: "Features"
-        name: "feature"
-        file: "data/en/feature.yml"
-        fields:
-          - label: "Feature"
-            name: "feature"
-            widget: "object"
-            fields:
-              - { label: "Enable", name: "enable", widget: "boolean" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Content", name: "content", widget: "text" }
-              - label: "Feature Items"
-                name: "feature_item"
-                widget: "list"
-                fields:
-                  - { label: "Title", name: "title", widget: "string" }
-                  - { label: "Icon (themify)", name: "icon", widget: "string" }
-                  - { label: "Content", name: "content", widget: "text" }
-
-      - label: "Call to Action"
-        name: "cta"
-        file: "data/en/cta.yml"
-        fields:
-          - label: "CTA"
-            name: "cta"
-            widget: "object"
-            fields:
-              - { label: "Enable", name: "enable", widget: "boolean" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Content", name: "content", widget: "text" }
-              - label: "Button"
-                name: "button"
-                widget: "object"
-                fields:
-                  - { label: "Enable", name: "enable", widget: "boolean" }
-                  - { label: "Label", name: "label", widget: "string" }
-                  - { label: "Link", name: "link", widget: "string" }
-
-      - label: "Fun Facts / Counters"
-        name: "funfacts"
-        file: "data/en/funfacts.yml"
-        fields:
-          - label: "Funfacts"
-            name: "funfacts"
-            widget: "object"
-            fields:
-              - { label: "Enable", name: "enable", widget: "boolean" }
-              - label: "Counter Items"
-                name: "counter_item"
-                widget: "list"
-                fields:
-                  - { label: "Title", name: "title", widget: "string" }
-                  - { label: "Icon (themify)", name: "icon", widget: "string" }
-                  - { label: "Count", name: "count", widget: "string" }
-
-      - label: "Testimonials"
-        name: "testimonial"
-        file: "data/en/testimonial.yml"
-        fields:
-          - label: "Testimonial"
-            name: "testimonial"
-            widget: "object"
-            fields:
-              - { label: "Enable", name: "enable", widget: "boolean" }
-              - label: "Testimonial Items"
-                name: "testimonial_item"
-                widget: "list"
-                fields:
-                  - { label: "Name", name: "name", widget: "string" }
-                  - { label: "Date", name: "date", widget: "string" }
-                  - { label: "Content", name: "content", widget: "text" }
-
-      - label: "Contact"
-        name: "contact"
-        file: "data/en/contact.yml"
-        fields:
-          - label: "Contact"
-            name: "contact"
-            widget: "object"
-            fields:
-              - { label: "Enable", name: "enable", widget: "boolean" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Subtitle", name: "subtitle", widget: "string" }
-              - { label: "Content", name: "content", widget: "text" }
-              - label: "Contact Details"
-                name: "contact_list"
-                widget: "list"
-                fields:
-                  - { label: "Icon (themify)", name: "icon", widget: "string" }
-                  - { label: "Info", name: "info", widget: "string" }
-
-  - name: "blog"
-    label: "Blog Posts"
-    folder: "content/english/blog"
+  - name: "services"
+    label: "Services"
+    folder: "content/services"
     create: true
     slug: "{{slug}}"
+    filter: { field: "draft", value: false }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Draft", name: "draft", widget: "boolean", default: false }
-      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Featured", name: "featured", widget: "boolean", default: true }
+      - { label: "Sort Order", name: "weight", widget: "number", default: 1 }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Contact Info"
+        name: "contact"
+        file: "data/contact.yaml"
+        fields:
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Contact Button Link", name: "contact_button_link", widget: "string", default: "contact" }
+
+      - label: "Homepage Features"
+        name: "features"
+        file: "data/features.json"
+        fields:
+          - label: "Features"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "image", widget: "image" }
+
+      - label: "Homepage"
+        name: "homepage"
+        file: "content/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta Title", name: "meta_title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "About Page"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Contact Page"
+        name: "contact_page"
+        file: "content/contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }

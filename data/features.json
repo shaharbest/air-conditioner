@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Free Estimates",
+    "description": "Call or email us for a no-obligation quote. We assess your system and give you a transparent price upfront.",
+    "image": "images/features/noun_branding_1885335.svg"
+  },
+  {
+    "title": "Licensed & Insured",
+    "description": "All our technicians are certified and fully insured. Your home and family are in safe, professional hands.",
+    "image": "images/features/noun_The Process_1885341.svg"
+  },
+  {
+    "title": "Satisfaction Guaranteed",
+    "description": "We don't leave until the job is done right. If you're not satisfied, we'll make it right — no questions asked.",
+    "image": "images/features/noun_3d modeling_1885342.svg"
+  }
+]
