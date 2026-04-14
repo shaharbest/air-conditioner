@@ -71,6 +71,9 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Meta Title", name: "meta_title", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
+          - { label: "Hero Image", name: "intro_image", widget: "image", required: false }
+          - { label: "Hero Image Absolute Position", name: "intro_image_absolute", widget: "boolean", default: true, required: false }
+          - { label: "Hero Image Hide on Mobile", name: "intro_image_hide_on_mobile", widget: "boolean", default: true, required: false }
           - { label: "Body", name: "body", widget: "markdown" }
 
       - label: "About Page"
