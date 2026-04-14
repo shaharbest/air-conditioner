@@ -1,5 +1,5 @@
 ---
-title: About Philly Green Clean - Test
+title: About Philly Green Clean
 date: 2024-01-01
 ---
 
