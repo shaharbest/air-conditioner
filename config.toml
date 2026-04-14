@@ -28,11 +28,11 @@ timeZone = "America/New_York"
     base = "Source Sans Pro"
 
   [params.colors]
-    primary = "#2e7d32"
-    black = "#2f2f41"
+    primary = "#0277BD"
+    black = "#1a2744"
     white = "#ffffff"
-    white_offset = "#f6f7ff"
-    grey = "#5C5A5A"
+    white_offset = "#e8f5fe"
+    grey = "#546e7a"
 
   [params.seo]
     meta_og_image = "images/og-image.jpg"
@@ -41,7 +41,7 @@ timeZone = "America/New_York"
     summary_truncate = 120
 
   [params.footer]
-    copyright_text = "Copyright &copy; 2024 Philly Green Clean LLC"
+    copyright_text = "Copyright &copy; 2026 Philly Green Clean LLC"
 
 [menu]
   [[menu.main]]
