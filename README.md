@@ -7,8 +7,7 @@ Static business website for an air conditioner maintenance business.
 | Layer | Tool |
 |---|---|
 | Static site generator | [Hugo](https://gohugo.io/) v0.160.1 extended |
-| Theme | [Meghna Hugo](https://github.com/themefisher/meghna-hugo) (git submodule at `themes/meghna-hugo`) |
-| Hugo module | `github.com/gethugothemes/hugo-modules/images` (vendored in `_vendor/`) |
+| Theme | [Hugo Serif](https://github.com/zerostaticthemes/hugo-serif-theme) (git submodule at `themes/hugo-serif-theme`) |
 | CMS | [Decap CMS](https://decapcms.org/) |
 | CMS auth | [DecapBridge](https://decapbridge.com/) (replaces deprecated Netlify Identity + Git Gateway) |
 | Hosting | [Netlify](https://netlify.com) — auto-deploys on push to `main` |
@@ -18,33 +17,30 @@ Static business website for an air conditioner maintenance business.
 
 ```
 .
-├── assets/images/          # Site images (copied from theme example site)
-├── config/_default/        # Hugo config split into multiple files
-│   ├── hugo.toml           # Main config: baseURL, title, theme, plugins
-│   ├── languages.toml      # Language definitions (en + fr, only en is used)
-│   ├── menus.en.toml       # Navigation menu items
-│   └── module.toml         # Hugo module imports + min Hugo version
-├── content/english/        # Markdown content (blog posts, author pages)
-├── data/en/                # YAML files — THIS is where all page content lives
-│   ├── banner.yml          # Hero section (title, subtitle, CTA button)
-│   ├── service.yml         # Services section (list of service cards)
-│   ├── about.yml           # About section (list of feature points)
-│   ├── feature.yml         # Feature section (image + feature list)
-│   ├── cta.yml             # Call-to-action banner
-│   ├── funfacts.yml        # Counters section
-│   ├── testimonial.yml     # Testimonials carousel
-│   ├── contact.yml         # Contact section (address, phone, email)
-│   ├── pricing.yml         # Pricing section (currently unused/hidden)
-│   ├── portfolio.yml       # Portfolio section (currently unused/hidden)
-│   ├── skill.yml           # Skills section (currently unused/hidden)
-│   └── team.yml            # Team section (currently unused/hidden)
-├── static/admin/           # Decap CMS admin panel
-│   ├── index.html          # CMS entry point (loads decap-cms JS from CDN)
-│   └── config.yml          # CMS collections config (maps to data/en/*.yml)
-├── themes/meghna-hugo/     # Theme as git submodule
-├── _vendor/                # Vendored Hugo modules (committed so Netlify doesn't need to fetch)
-├── netlify.toml            # Netlify build config (Hugo version, submodule strategy)
-└── go.mod / go.sum         # Hugo module dependencies
+├── assets/images/          # Legacy images (from old theme — can be cleaned up)
+├── config.toml             # All Hugo config: baseURL, title, theme, params, menus
+├── content/
+│   ├── _index.md           # Homepage headline and intro text
+│   ├── about.md            # About page
+│   ├── contact.md          # Contact page (hours table, intro text)
+│   └── services/           # One .md file per service (title, body, weight)
+├── data/
+│   ├── contact.yaml        # Phone + email — shown in header contact box
+│   ├── features.json       # 3 homepage feature cards {"features": [...]}
+│   └── social.json         # Social links (currently empty)
+├── layouts/                # Project-level template overrides (take precedence over theme)
+│   ├── index.html          # Homepage — fixes features.json structure + hugo.Data
+│   └── partials/
+│       ├── call.html       # Contact box partial — uses hugo.Data
+│       ├── social.html     # Social links partial — uses hugo.Data
+│       └── sub-footer.html # Footer partial — uses hugo.Data
+├── static/
+│   ├── admin/              # Decap CMS admin panel
+│   │   ├── index.html      # CMS entry point (loads decap-cms JS from CDN)
+│   │   └── config.yml      # CMS collections config
+│   └── images/             # Site images (copied from theme exampleSite)
+├── themes/hugo-serif-theme/ # Theme as git submodule
+└── netlify.toml            # Netlify build config (Hugo version, submodule strategy)
 ```
 
 ## Local development
@@ -55,7 +51,7 @@ git clone --recurse-submodules https://github.com/shaharbest/air-conditioner
 cd air-conditioner
 
 # Run dev server
-hugo server --buildDrafts
+hugo server
 # → http://localhost:1313
 ```
 
@@ -66,7 +62,18 @@ The business owner edits content at:
 https://danielle.best/admin
 ```
 
-Auth is handled by **DecapBridge** (PKCE OAuth via GitHub). The CMS covers all sections in `data/en/`. Changes are committed directly to the `main` branch, which triggers a Netlify redeploy.
+Auth is handled by **DecapBridge** (PKCE OAuth via GitHub). The CMS covers:
+
+| CMS section | File edited |
+|---|---|
+| Services | `content/services/*.md` (create/edit/delete) |
+| Contact Info (phone, email) | `data/contact.yaml` |
+| Homepage Features | `data/features.json` |
+| Homepage | `content/_index.md` |
+| About Page | `content/about.md` |
+| Contact Page | `content/contact.md` |
+
+Changes are committed directly to the `main` branch, which triggers a Netlify redeploy.
 
 To invite a new CMS user: add them in the **DecapBridge dashboard** under the site's user management.
 
@@ -104,16 +111,12 @@ netlify logs                # stream deploy/function logs
 ## Known issues / gotchas
 
 - **Theme is a git submodule** — always clone with `--recurse-submodules`. Netlify handles this via `GIT_SUBMODULE_STRATEGY = "recursive"` in `netlify.toml`.
-- **Hugo modules are vendored** — `_vendor/` is committed so Netlify doesn't need network access to fetch Go modules at build time.
-- **Netlify Identity and Git Gateway are deprecated** — do not use them. DecapBridge is the replacement.
-- **French content exists** (`content/french/`, `data/fr/`) but is not actively maintained. The site is single-language (English).
-- **`data/fr/` is not wired into the CMS** — only `data/en/` collections are in `static/admin/config.yml`.
-- The theme references `.Site.Data` and `.Site.Languages` which are deprecated in Hugo v0.156+. These produce warnings at build time but do not break the build.
+- **Theme uses deprecated `.Site.Data`** — project-level overrides in `layouts/` replace the affected partials with `hugo.Data`. Do not delete the `layouts/` overrides.
+- **`data/features.json` is an object, not an array** — the theme's exampleSite uses a root-level array, but Decap CMS requires an object wrapper. The `layouts/index.html` override reads `hugo.Data.features.features` accordingly.
+- **No contact form** — the contact page shows phone/email from `data/contact.yaml` but has no form submission. Add Netlify Forms if a form is needed.
 
 ## TODO / next steps
 
-- Replace placeholder content in `data/en/` with real business info
-- Replace images in `assets/images/` with real photos
-- Set up Google Analytics 4 + Tag Manager for call tracking
-- Update `config/_default/hugo.toml`: set `title`, `googleAnalytics`
-- Disable or hide unused sections (portfolio, pricing, skills, team) via `enable: false` in their respective `data/en/*.yml` files
+- Replace placeholder phone and email in `data/contact.yaml` with real business info
+- Replace images in `static/images/` with real photos
+- Set up Google Analytics 4 + Tag Manager for call tracking (set `google_analytics_id` in `config.toml`)
