@@ -1,0 +1,16 @@
+{{ if .Site.Params.homepage.sticky_header}}
+<div class='header' id="stickyHeader">
+{{ else }}
+<div class='header' >
+{{ end }}
+  <div class="container">
+    <div class="logo">
+      <a href="{{ .Site.Home.RelPermalink }}">{{ partial "logo-inline.html" . }}</a>
+    </div>
+    <div class="logo-mobile">
+      <a href="{{ .Site.Home.RelPermalink }}">{{ partial "logo-mobile-inline.html" . }}</a>
+    </div>
+    {{ partial "main-menu.html" . }}
+    {{ partial "hamburger.html" . }}
+  </div>
+</div>
