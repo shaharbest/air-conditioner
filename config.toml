@@ -28,10 +28,12 @@ timeZone = "America/New_York"
     base = "Source Sans Pro"
 
   [params.colors]
-    primary = "#0277BD"
+    # primary = "#0277BD"
+    primary = "#629e27"
     black = "#1a2744"
     white = "#ffffff"
-    white_offset = "#e8f5fe"
+    # white_offset = "#e8f5fe"
+    white_offset = "#f4f9ef"
     grey = "#546e7a"
 
   [params.seo]
