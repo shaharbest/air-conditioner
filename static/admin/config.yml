@@ -52,7 +52,7 @@ collections:
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Contact Button Link", name: "contact_button_link", widget: "string", default: "contact" }
 
-      - label: "Homepage Features"
+      - label: "Features"
         name: "features"
         file: "data/features.json"
         fields:
