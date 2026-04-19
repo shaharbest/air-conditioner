@@ -3,6 +3,13 @@ theme = "hugo-serif-theme"
 languageCode = "en-us"
 title = "Philly Green Clean"
 timeZone = "America/New_York"
+enableGitInfo = true
+disableKinds = ["taxonomy", "term"]
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
 
 [params]
   google_analytics_id = ""
