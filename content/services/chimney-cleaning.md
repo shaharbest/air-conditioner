@@ -4,6 +4,8 @@ date: 2024-01-01
 draft: false
 featured: true
 weight: 3
+sitemap:
+  priority: 0.8
 ---
 
 A dirty chimney is a fire waiting to happen. Creosote — the tarry byproduct of burning wood — builds up inside your flue and is highly flammable. The National Fire Protection Association recommends chimney inspections and cleaning at least once a year.

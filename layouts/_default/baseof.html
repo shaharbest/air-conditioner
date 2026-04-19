@@ -51,6 +51,9 @@
     {{ with $seo.twitter_site }}<meta name="twitter:site" content="{{ . }}"/>{{ end }}
   {{ end }}
 
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{ partial "schema.html" . }}
+
 </head>
 
 <body class='page {{ block "body_classes" . }}{{ end }}'>

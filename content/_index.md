@@ -6,6 +6,8 @@ intro_image: "images/illustrations/pointing.svg"
 intro_image_absolute: true
 intro_image_absolute_offset: "auto auto -100px -80px"
 intro_image_hide_on_mobile: true
+sitemap:
+  priority: 1.0
 ---
 
 # Breathe Cleaner Air. Call Today.

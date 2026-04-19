@@ -4,6 +4,8 @@ date: 2024-01-01
 draft: false
 featured: true
 weight: 2
+sitemap:
+  priority: 0.8
 ---
 
 Clogged dryer vents are the leading cause of residential fires in the United States. The U.S. Fire Administration reports nearly 3,000 dryer fires per year — and lint buildup is the culprit in the majority of cases.

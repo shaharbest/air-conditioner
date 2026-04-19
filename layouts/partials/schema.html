@@ -1,0 +1,48 @@
+{{ $contact := .Site.Data.contact }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.BaseURL }}",
+  "telephone": "{{ $contact.phone }}",
+  "email": "{{ $contact.email }}",
+  "description": "{{ .Site.Params.description }}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Philadelphia",
+    "addressRegion": "PA",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "Philadelphia",
+    "Montgomery County",
+    "Delaware County",
+    "Bucks County",
+    "Chester County"
+  ],
+  "serviceType": ["Air Duct Cleaning", "Dryer Vent Cleaning", "Chimney Cleaning"],
+  "priceRange": "$$",
+  "image": "{{ .Site.Params.seo.meta_og_image | absURL }}"
+}
+</script>
+{{ if and (eq .Section "services") .IsPage }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ .Title }}",
+  "description": "{{ .Summary | plainify }}",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "{{ .Site.Title }}",
+    "url": "{{ .Site.BaseURL }}"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Philadelphia"
+  },
+  "url": "{{ .Permalink }}"
+}
+</script>
+{{ end }}
