@@ -21,7 +21,15 @@
     "Bucks County",
     "Chester County"
   ],
-  "serviceType": ["Air Duct Cleaning", "Dryer Vent Cleaning", "Chimney Cleaning"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Cleaning Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Air Duct Cleaning" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dryer Vent Cleaning" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chimney Cleaning" } }
+    ]
+  },
   "priceRange": "$$",
   "image": "{{ .Site.Params.seo.meta_og_image | absURL }}"
 }
