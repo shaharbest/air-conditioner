@@ -39,6 +39,7 @@ collections:
       - { label: "Draft", name: "draft", widget: "boolean", default: false }
       - { label: "Featured", name: "featured", widget: "boolean", default: true }
       - { label: "Sort Order", name: "weight", widget: "number", default: 1 }
+      - { label: "Social Preview Image", name: "og_image", widget: "image", required: false, hint: "Overrides the default social image when this service page is shared." }
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "pages"
@@ -64,6 +65,32 @@ collections:
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Image", name: "image", widget: "image" }
 
+      - label: "Social Previews (SEO)"
+        name: "seo"
+        file: "data/seo.yaml"
+        fields:
+          - label: "Default Social Image"
+            name: "og_image"
+            widget: "image"
+            required: false
+            hint: "Recommended: 1200×630px JPG. Shown when any page is shared on WhatsApp, Facebook, Slack, iMessage, etc."
+          - label: "Default Social Description"
+            name: "og_description"
+            widget: "text"
+            required: false
+            hint: "Shown under the title in social previews. Falls back to the page description if set."
+          - label: "Twitter/X Handle"
+            name: "twitter_site"
+            widget: "string"
+            required: false
+            hint: "Include the @ symbol, e.g. @phillygreenclean"
+          - label: "Twitter Card Style"
+            name: "twitter_card"
+            widget: "select"
+            options: ["summary_large_image", "summary"]
+            default: "summary_large_image"
+            hint: "summary_large_image shows a big banner image — recommended."
+
       - label: "Homepage"
         name: "homepage"
         file: "content/_index.md"
@@ -71,6 +98,7 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Meta Title", name: "meta_title", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
+          - { label: "Social Preview Image", name: "og_image", widget: "image", required: false, hint: "Overrides the default social image for this page only." }
           - { label: "Hero Image", name: "intro_image", widget: "image", required: false }
           - { label: "Hero Image Absolute Position", name: "intro_image_absolute", widget: "boolean", default: true, required: false }
           - { label: "Hero Image Hide on Mobile", name: "intro_image_hide_on_mobile", widget: "boolean", default: true, required: false }
@@ -81,6 +109,7 @@ collections:
         file: "content/about.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Social Preview Image", name: "og_image", widget: "image", required: false, hint: "Overrides the default social image for this page only." }
           - { label: "Body", name: "body", widget: "markdown" }
 
       - label: "Contact Page"
@@ -88,4 +117,5 @@ collections:
         file: "content/contact.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Social Preview Image", name: "og_image", widget: "image", required: false, hint: "Overrides the default social image for this page only." }
           - { label: "Body", name: "body", widget: "markdown" }
