@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="container pt-8 pt-md-10 pb-8 pb-md-10">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-9">
+      <h1>{{ .Title }}</h1>
+      {{ range hugo.Data.faq.items }}
+      <h2>{{ .question }}</h2>
+      <p>{{ .answer }}</p>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

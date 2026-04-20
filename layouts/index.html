@@ -60,6 +60,26 @@
 </div>
 {{end}}
 
+{{ with .Params.about_heading }}
+<div class="strip">
+  <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-md-7">
+        <h2>{{ . }}</h2>
+        {{ with $.Params.about_body }}<p>{{ . }}</p>{{ end }}
+        {{ with $.Params.about_bullets }}
+        <ul class="list-unstyled mt-3">
+          {{ range . }}<li class="mb-1">✓ {{ . }}</li>{{ end }}
+        </ul>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+{{ partial "testimonials.html" . }}
+
 {{ end }}
 
 {{ define "footer_js" }}

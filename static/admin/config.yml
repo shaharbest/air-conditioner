@@ -103,6 +103,38 @@ collections:
           - { label: "Hero Image Absolute Position", name: "intro_image_absolute", widget: "boolean", default: true, required: false }
           - { label: "Hero Image Hide on Mobile", name: "intro_image_hide_on_mobile", widget: "boolean", default: true, required: false }
           - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "About Section Heading", name: "about_heading", widget: "string", required: false, hint: "Heading for the About section on the homepage." }
+          - { label: "About Section Body", name: "about_body", widget: "text", required: false, hint: "2-3 sentences about the business — shown on the homepage." }
+          - label: "About Section Bullet Points"
+            name: "about_bullets"
+            widget: "list"
+            required: false
+            hint: "Trust/credential points shown as a checklist (e.g. 'Licensed & insured', '10 years in business')."
+
+      - label: "Testimonials"
+        name: "testimonials"
+        file: "data/testimonials.json"
+        fields:
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Customer Name", name: "name", widget: "string", hint: "First name or alias, e.g. 'John D.' or 'Homeowner in South Philly'" }
+              - { label: "Neighborhood / City", name: "location", widget: "string", required: false }
+              - { label: "Service Used", name: "service", widget: "select", options: ["Air Duct Cleaning", "Dryer Vent Cleaning", "Chimney Cleaning"], required: false }
+
+      - label: "Business Hours"
+        name: "hours"
+        file: "data/hours.json"
+        fields:
+          - label: "Hours"
+            name: "hours"
+            widget: "list"
+            fields:
+              - { label: "Day", name: "day", widget: "string" }
+              - { label: "Hours", name: "hours", widget: "string", hint: "e.g. '8:00am – 6:00pm' or 'Closed'" }
 
       - label: "About Page"
         name: "about"
@@ -110,6 +142,25 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Social Preview Image", name: "og_image", widget: "image", required: false, hint: "Overrides the default social image for this page only." }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "FAQ"
+        name: "faq"
+        file: "data/faq.json"
+        fields:
+          - label: "Questions & Answers"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+
+      - label: "Services Page"
+        name: "services_index"
+        file: "content/services/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
           - { label: "Body", name: "body", widget: "markdown" }
 
       - label: "Contact Page"

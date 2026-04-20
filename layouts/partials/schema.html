@@ -1,4 +1,4 @@
-{{ $contact := .Site.Data.contact }}
+{{ $contact := hugo.Data.contact }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -19,7 +19,7 @@
     "Montgomery County",
     "Delaware County",
     "Bucks County",
-    "Chester County"
+    "South Jersey"
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -31,9 +31,10 @@
     ]
   },
   "priceRange": "$$",
-  "image": "{{ .Site.Params.seo.meta_og_image | absURL }}"
+  "image": "{{ hugo.Data.seo.og_image | absURL }}"
 }
 </script>
+
 {{ if and (eq .Section "services") .IsPage }}
 <script type="application/ld+json">
 {
@@ -51,6 +52,27 @@
     "name": "Philadelphia"
   },
   "url": "{{ .Permalink }}"
+}
+</script>
+{{ end }}
+
+{{ if eq .File.Path "faq.md" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $item := hugo.Data.faq.items }}{{ if $i }},{{ end }}
+    {
+      "@type": "Question",
+      "name": "{{ replace $item.question `"` `'` }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ replace $item.answer `"` `'` }}"
+      }
+    }
+    {{ end }}
+  ]
 }
 </script>
 {{ end }}

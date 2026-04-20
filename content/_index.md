@@ -8,6 +8,9 @@ intro_image_absolute_offset: "auto auto -100px -80px"
 intro_image_hide_on_mobile: true
 sitemap:
   priority: 1.0
+about_heading: ""
+about_body: ""
+about_bullets: []
 ---
 
 # Breathe Cleaner Air. Call Today.
