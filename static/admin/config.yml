@@ -45,14 +45,84 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - label: "Contact Info"
-        name: "contact"
-        file: "data/contact.yaml"
+      - label: "Homepage"
+        name: "homepage"
+        file: "content/_index.md"
         fields:
-          - { label: "Phone", name: "phone", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Contact Button Link", name: "contact_button_link", widget: "string", default: "contact" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Meta Title", name: "meta_title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Social Preview Image", name: "og_image", widget: "image", required: false, hint: "Overrides the default social image for this page only." }
+          - { label: "Hero Image", name: "intro_image", widget: "image", required: false }
+          - { label: "Hero Image Absolute Position", name: "intro_image_absolute", widget: "boolean", default: true, required: false }
+          - { label: "Hero Image Hide on Mobile", name: "intro_image_hide_on_mobile", widget: "boolean", default: true, required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "About Section Heading", name: "about_heading", widget: "string", required: false, hint: "Heading for the About section on the homepage." }
+          - { label: "About Section Body", name: "about_body", widget: "text", required: false, hint: "2-3 sentences about the business — shown on the homepage." }
+          - label: "About Section Bullet Points"
+            name: "about_bullets"
+            widget: "list"
+            required: false
+            hint: "Trust/credential points shown as a checklist (e.g. 'Licensed & insured', '10 years in business')."
 
+      - label: "About Page"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Social Preview Image", name: "og_image", widget: "image", required: false, hint: "Overrides the default social image for this page only." }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Services Page"
+        name: "services_index"
+        file: "content/services/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Contact Page"
+        name: "contact_page"
+        file: "content/contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Social Preview Image", name: "og_image", widget: "image", required: false, hint: "Overrides the default social image for this page only." }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    files:
+      - label: "Testimonials"
+        name: "testimonials"
+        file: "data/testimonials.json"
+        fields:
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Customer Name", name: "name", widget: "string", hint: "First name or alias, e.g. 'John D.' or 'Homeowner in South Philly'" }
+              - { label: "Neighborhood / City", name: "location", widget: "string", required: false }
+              - { label: "Service Used", name: "service", widget: "select", options: ["Air Duct Cleaning", "Dryer Vent Cleaning", "Chimney Cleaning"], required: false }
+
+  - name: "faq"
+    label: "FAQ"
+    files:
+      - label: "Questions & Answers"
+        name: "faq"
+        file: "data/faq.json"
+        fields:
+          - label: "Questions & Answers"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+
+  - name: "features"
+    label: "Features"
+    files:
       - label: "Features"
         name: "features"
         file: "data/features.json"
@@ -65,7 +135,34 @@ collections:
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Image", name: "image", widget: "image" }
 
-      - label: "Social Previews (SEO)"
+  - name: "business_info"
+    label: "Business Info"
+    files:
+      - label: "Contact Info"
+        name: "contact"
+        file: "data/contact.yaml"
+        fields:
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Contact Button Link", name: "contact_button_link", widget: "string", default: "contact" }
+
+      - label: "Business Hours"
+        name: "hours"
+        file: "data/hours.json"
+        fields:
+          - label: "Hours"
+            name: "hours"
+            widget: "list"
+            fields:
+              - { label: "Day", name: "day", widget: "string" }
+              - { label: "Closed", name: "closed", widget: "boolean", default: false, required: false }
+              - { label: "Opens", name: "opens", widget: "string", required: false, hint: "24-hour format, e.g. 09:00. Leave empty if closed." }
+              - { label: "Closes", name: "closes", widget: "string", required: false, hint: "24-hour format, e.g. 17:00. Leave empty if closed." }
+
+  - name: "seo"
+    label: "SEO"
+    files:
+      - label: "Social Previews"
         name: "seo"
         file: "data/seo.yaml"
         fields:
@@ -90,85 +187,3 @@ collections:
             options: ["summary_large_image", "summary"]
             default: "summary_large_image"
             hint: "summary_large_image shows a big banner image — recommended."
-
-      - label: "Homepage"
-        name: "homepage"
-        file: "content/_index.md"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Meta Title", name: "meta_title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - { label: "Social Preview Image", name: "og_image", widget: "image", required: false, hint: "Overrides the default social image for this page only." }
-          - { label: "Hero Image", name: "intro_image", widget: "image", required: false }
-          - { label: "Hero Image Absolute Position", name: "intro_image_absolute", widget: "boolean", default: true, required: false }
-          - { label: "Hero Image Hide on Mobile", name: "intro_image_hide_on_mobile", widget: "boolean", default: true, required: false }
-          - { label: "Body", name: "body", widget: "markdown" }
-          - { label: "About Section Heading", name: "about_heading", widget: "string", required: false, hint: "Heading for the About section on the homepage." }
-          - { label: "About Section Body", name: "about_body", widget: "text", required: false, hint: "2-3 sentences about the business — shown on the homepage." }
-          - label: "About Section Bullet Points"
-            name: "about_bullets"
-            widget: "list"
-            required: false
-            hint: "Trust/credential points shown as a checklist (e.g. 'Licensed & insured', '10 years in business')."
-
-      - label: "Testimonials"
-        name: "testimonials"
-        file: "data/testimonials.json"
-        fields:
-          - label: "Testimonials"
-            name: "testimonials"
-            widget: "list"
-            required: false
-            fields:
-              - { label: "Quote", name: "quote", widget: "text" }
-              - { label: "Customer Name", name: "name", widget: "string", hint: "First name or alias, e.g. 'John D.' or 'Homeowner in South Philly'" }
-              - { label: "Neighborhood / City", name: "location", widget: "string", required: false }
-              - { label: "Service Used", name: "service", widget: "select", options: ["Air Duct Cleaning", "Dryer Vent Cleaning", "Chimney Cleaning"], required: false }
-
-      - label: "Business Hours"
-        name: "hours"
-        file: "data/hours.json"
-        fields:
-          - label: "Hours"
-            name: "hours"
-            widget: "list"
-            fields:
-              - { label: "Day", name: "day", widget: "string" }
-              - { label: "Closed", name: "closed", widget: "boolean", default: false, required: false }
-              - { label: "Opens", name: "opens", widget: "string", required: false, hint: "24-hour format, e.g. 09:00. Leave empty if closed." }
-              - { label: "Closes", name: "closes", widget: "string", required: false, hint: "24-hour format, e.g. 17:00. Leave empty if closed." }
-
-      - label: "About Page"
-        name: "about"
-        file: "content/about.md"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Social Preview Image", name: "og_image", widget: "image", required: false, hint: "Overrides the default social image for this page only." }
-          - { label: "Body", name: "body", widget: "markdown" }
-
-      - label: "FAQ"
-        name: "faq"
-        file: "data/faq.json"
-        fields:
-          - label: "Questions & Answers"
-            name: "items"
-            widget: "list"
-            fields:
-              - { label: "Question", name: "question", widget: "string" }
-              - { label: "Answer", name: "answer", widget: "text" }
-
-      - label: "Services Page"
-        name: "services_index"
-        file: "content/services/_index.md"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text", required: false }
-          - { label: "Body", name: "body", widget: "markdown" }
-
-      - label: "Contact Page"
-        name: "contact_page"
-        file: "content/contact.md"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Social Preview Image", name: "og_image", widget: "image", required: false, hint: "Overrides the default social image for this page only." }
-          - { label: "Body", name: "body", widget: "markdown" }
