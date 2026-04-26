@@ -14,7 +14,7 @@ disableKinds = ["taxonomy", "term"]
 [params]
   google_analytics_id = ""
   google_tag_manager_id = "GTM-NSV6FQWB"
-  favicon = "favicon-32x32.svg"
+  favicon = "images/favicon_io/favicon.ico"
   description = "Philadelphia's trusted experts in air duct cleaning, dryer vent cleaning, and chimney cleaning. Serving Philly and surrounding areas."
 
   [params.homepage]
