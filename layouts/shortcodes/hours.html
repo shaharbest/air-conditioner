@@ -1,8 +1,11 @@
 <table>
 <thead><tr><th>Day</th><th>Hours</th></tr></thead>
 <tbody>
-{{ range site.Data.hours.hours }}
-<tr><td>{{ .day }}</td><td>{{ .hours }}</td></tr>
+{{ range hugo.Data.hours.hours }}
+<tr>
+  <td>{{ .day }}</td>
+  <td>{{ if .closed }}Closed{{ else }}{{ .opens }} – {{ .closes }}{{ end }}</td>
+</tr>
 {{ end }}
 </tbody>
 </table>

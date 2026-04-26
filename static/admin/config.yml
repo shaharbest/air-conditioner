@@ -134,7 +134,9 @@ collections:
             widget: "list"
             fields:
               - { label: "Day", name: "day", widget: "string" }
-              - { label: "Hours", name: "hours", widget: "string", hint: "e.g. '8:00am – 6:00pm' or 'Closed'" }
+              - { label: "Closed", name: "closed", widget: "boolean", default: false, required: false }
+              - { label: "Opens", name: "opens", widget: "string", required: false, hint: "24-hour format, e.g. 09:00. Leave empty if closed." }
+              - { label: "Closes", name: "closes", widget: "string", required: false, hint: "24-hour format, e.g. 17:00. Leave empty if closed." }
 
       - label: "About Page"
         name: "about"

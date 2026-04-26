@@ -1,8 +1,10 @@
 {{ $contact := hugo.Data.contact }}
+{{ $dayURIs := dict "Sunday" "https://schema.org/Sunday" "Monday" "https://schema.org/Monday" "Tuesday" "https://schema.org/Tuesday" "Wednesday" "https://schema.org/Wednesday" "Thursday" "https://schema.org/Thursday" "Friday" "https://schema.org/Friday" "Saturday" "https://schema.org/Saturday" }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "{{ .Site.BaseURL }}#business",
   "name": "{{ .Site.Title }}",
   "url": "{{ .Site.BaseURL }}",
   "telephone": "{{ $contact.phone }}",
@@ -20,6 +22,21 @@
     "Delaware County",
     "Bucks County",
     "South Jersey"
+  ],
+  "openingHoursSpecification": [
+    {{ $first := true }}
+    {{ range hugo.Data.hours.hours }}
+      {{ if not .closed }}
+        {{ if not $first }},{{ end }}
+        {{ $first = false }}
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "{{ index $dayURIs .day }}",
+      "opens": "{{ .opens }}",
+      "closes": "{{ .closes }}"
+    }
+      {{ end }}
+    {{ end }}
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -44,13 +61,15 @@
   "description": "{{ .Summary | plainify }}",
   "provider": {
     "@type": "LocalBusiness",
-    "name": "{{ .Site.Title }}",
-    "url": "{{ .Site.BaseURL }}"
+    "@id": "{{ .Site.BaseURL }}#business"
   },
-  "areaServed": {
-    "@type": "City",
-    "name": "Philadelphia"
-  },
+  "areaServed": [
+    "Philadelphia",
+    "Montgomery County",
+    "Delaware County",
+    "Bucks County",
+    "South Jersey"
+  ],
   "url": "{{ .Permalink }}"
 }
 </script>
