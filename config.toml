@@ -15,7 +15,7 @@ disableKinds = ["taxonomy", "term"]
   google_analytics_id = ""
   google_tag_manager_id = "GTM-NSV6FQWB"
   favicon = "images/favicon_io/favicon.ico"
-  description = "Philadelphia's trusted experts in air duct cleaning, dryer vent cleaning, and chimney cleaning. Serving Philly and surrounding areas."
+  description = "Air duct, dryer vent, and chimney cleaning in the Philadelphia area. Residential and commercial service with reliable scheduling, fair pricing, and thorough cleaning."
 
   [params.homepage]
     sticky_header = true
