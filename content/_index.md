@@ -12,4 +12,4 @@ intro_image_hide_on_mobile: true
 
 # Breathe Cleaner Air
 
-We serves Philadelphia and surrounding areas with professional air duct cleaning, dryer vent cleaning, and chimney cleaning.
+We serve Philadelphia and surrounding areas with professional air duct cleaning, dryer vent cleaning, and chimney cleaning.
