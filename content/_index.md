@@ -1,8 +1,7 @@
 ---
 intro_image_absolute_offset: auto auto -100px -80px
-meta_title: Philly Green Clean — Air Duct, Dryer Vent & Chimney Cleaning Philadelphia
-description: Philadelphia's trusted experts in air duct cleaning, dryer vent
-  cleaning, and chimney cleaning. Call us today for a free estimate.
+meta_title: Philly Green Clean
+description: Air Duct, Dryer Vent & Chimney Cleaning Philadelphia
 intro_image: /images/cleaning_guy.png
 intro_image_absolute: false
 sitemap:
