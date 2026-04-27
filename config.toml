@@ -20,7 +20,6 @@ disableKinds = ["taxonomy", "term"]
   [params.homepage]
     sticky_header = true
     show_contact_box = true
-    show_services_button = true
 
 [params.fonts]
     google_fonts = "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+Pro:wght@400;700&display=swap"
@@ -39,22 +38,14 @@ disableKinds = ["taxonomy", "term"]
   [params.seo]
     meta_og_image = "images/og-image.jpg"
 
-  [params.services]
-    summary_truncate = 120
-
-  [params.footer]
+[params.footer]
     copyright_text = "Copyright &copy; 2026 Philly Green Clean LLC"
 
 [menu]
   [[menu.main]]
     name = "Services"
-    url = "/services/"
+    url = "/#services"
     weight = 1
-
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 2
 
   [[menu.main]]
     name = "FAQ"
@@ -62,8 +53,8 @@ disableKinds = ["taxonomy", "term"]
     weight = 3
 
   [[menu.main]]
-    name = "Contact"
-    url = "/contact/"
+    name = "Hours"
+    url = "/#hours"
     weight = 4
 
   [[menu.footer]]
@@ -73,12 +64,12 @@ disableKinds = ["taxonomy", "term"]
 
   [[menu.footer]]
     name = "Services"
-    url = "/services/"
+    url = "/#services"
     weight = 2
 
   [[menu.footer]]
-    name = "Contact"
-    url = "/contact/"
+    name = "Hours"
+    url = "/#hours"
     weight = 3
 
   [[menu.footer]]

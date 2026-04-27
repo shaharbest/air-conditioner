@@ -15,27 +15,24 @@
   </div>
 </div>
 
-{{ $services := where (where .Site.RegularPages "Type" "services") ".Params.featured" true }}
-{{if gt (len $services) 0}}
-<div class="strip">
+{{ if hugo.Data.services.services }}
+<div id="services" class="strip">
   <div class="container pt-6 pb-6 pb-md-10">
     <div class="row justify-content-start">
-      {{ range first 6 (sort $services ".Params.weight") }}
+      {{ range hugo.Data.services.services }}
       <div class="col-12 col-md-4 mb-1">
-        {{ .Render "summary" }}
+        <div class="service service-summary">
+          <div class="service-content">
+            <h2 class="service-title">{{ .title }}</h2>
+            <p>{{ .summary }}</p>
+          </div>
+        </div>
       </div>
       {{ end }}
     </div>
-    {{ if .Site.Params.homepage.show_services_button }}
-    <div class="row justify-content-center">
-      <div class="col-auto">
-        <a class="button button-primary" href="{{ "services/" | relURL }}">View All Services</a>
-      </div>
-    </div>
-    {{ end }}
   </div>
 </div>
-{{end}}
+{{ end }}
 
 {{if hugo.Data.features.features}}
 <div class="strip strip-grey">
@@ -60,18 +57,23 @@
 </div>
 {{end}}
 
-{{ with .Params.about_heading }}
-<div class="strip">
+{{ if hugo.Data.hours.hours }}
+<div id="hours" class="strip">
   <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-12 col-md-7">
-        <h2>{{ . }}</h2>
-        {{ with $.Params.about_body }}<p>{{ . }}</p>{{ end }}
-        {{ with $.Params.about_bullets }}
-        <ul class="list-unstyled mt-3">
-          {{ range . }}<li class="mb-1">✓ {{ . }}</li>{{ end }}
-        </ul>
-        {{ end }}
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4">
+        <h2>Hours</h2>
+        <table class="table">
+          <thead><tr><th>Day</th><th>Hours</th></tr></thead>
+          <tbody>
+            {{ range hugo.Data.hours.hours }}
+            <tr>
+              <td>{{ .day }}</td>
+              <td>{{ if .closed }}Closed{{ else }}{{ .opens }} – {{ .closes }}{{ end }}</td>
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

@@ -1,0 +1,16 @@
+{
+  "services": [
+    {
+      "title": "Air Duct Cleaning",
+      "summary": "Your HVAC system circulates air throughout your home dozens of times a day. Over time, dust, allergens, mold spores, and debris build up inside your air ducts — and that buildup gets pushed into the air your family breathes."
+    },
+    {
+      "title": "Dryer Vent Cleaning",
+      "summary": "Clogged dryer vents are the leading cause of residential fires in the United States. The U.S. Fire Administration reports nearly 3,000 dryer fires per year — and lint buildup is the culprit in the majority of cases."
+    },
+    {
+      "title": "Chimney Cleaning",
+      "summary": "A dirty chimney is a fire waiting to happen. Creosote — the tarry byproduct of burning wood — builds up inside your flue and is highly flammable. The National Fire Protection Association recommends chimney inspections and cleaning at least once a year."
+    }
+  ]
+}
