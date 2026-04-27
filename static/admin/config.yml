@@ -112,7 +112,6 @@ collections:
         fields:
           - { label: "Phone", name: "phone", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
-          - { label: "Contact Button Link", name: "contact_button_link", widget: "string", default: "#hours" }
 
       - label: "Business Hours"
         name: "hours"

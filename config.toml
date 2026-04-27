@@ -19,7 +19,7 @@ disableKinds = ["taxonomy", "term"]
 
   [params.homepage]
     sticky_header = true
-    show_contact_box = true
+    show_info_box = true
 
 [params.fonts]
     google_fonts = "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+Pro:wght@400;700&display=swap"
