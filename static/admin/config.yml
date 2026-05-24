@@ -40,6 +40,7 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Summary", name: "summary", widget: "text", hint: "Short description shown on the homepage." }
+              - { label: "Icon", name: "icon", widget: "image", required: false, hint: "Icon displayed above the service title on the homepage." }
 
   - name: "pages"
     label: "Pages"
@@ -87,21 +88,6 @@ collections:
             fields:
               - { label: "Question", name: "question", widget: "string" }
               - { label: "Answer", name: "answer", widget: "text" }
-
-  - name: "features"
-    label: "Features"
-    files:
-      - label: "Features"
-        name: "features"
-        file: "data/features.json"
-        fields:
-          - label: "Features"
-            name: "features"
-            widget: "list"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Image", name: "image", widget: "image" }
 
   - name: "business_info"
     label: "Business Info"
