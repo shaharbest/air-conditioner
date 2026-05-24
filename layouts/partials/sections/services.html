@@ -1,0 +1,18 @@
+{{ if hugo.Data.services.services }}
+<div id="services" class="strip">
+  <div class="container pt-6 pb-6 pb-md-10">
+    <div class="row justify-content-start">
+      {{ range hugo.Data.services.services }}
+      <div class="col-12 col-md-4 mb-1">
+        <div class="service service-summary">
+          <div class="service-content">
+            <h2 class="service-title">{{ .title }}</h2>
+            <p>{{ .summary }}</p>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}
