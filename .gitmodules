@@ -1,3 +1,3 @@
-[submodule "themes/hugo-serif-theme"]
-	path = themes/hugo-serif-theme
-	url = https://github.com/zerostaticthemes/hugo-serif-theme
+[submodule "themes/shahar-local-biz"]
+	path = themes/shahar-local-biz
+	url = https://github.com/shaharbest/shahar-local-biz

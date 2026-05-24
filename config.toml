@@ -1,5 +1,5 @@
 baseURL = "https://phillygreenclean.com/"
-theme = "hugo-serif-theme"
+theme = "shahar-local-biz"
 locale = "en-us"
 title = "Philly Green Clean"
 timeZone = "America/New_York"

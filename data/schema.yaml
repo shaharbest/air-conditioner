@@ -1,0 +1,11 @@
+business_type: "LocalBusiness"
+address_locality: "Philadelphia"
+address_region: "PA"
+address_country: "US"
+area_served:
+  - "Philadelphia"
+  - "Montgomery County"
+  - "Delaware County"
+  - "Bucks County"
+  - "South Jersey"
+price_range: "$$"
