@@ -24,6 +24,8 @@ menuContainer.querySelectorAll("a").forEach(link =>
 
 const header = document.getElementById("stickyHeader");
 if (header) {
+  const offset = header.offsetTop;
+
   const updateScrollPadding = () => {
     document.documentElement.style.scrollPaddingTop = `${header.offsetHeight}px`;
   };
@@ -31,4 +33,7 @@ if (header) {
   updateScrollPadding();
   window.addEventListener("resize", updateScrollPadding);
 
+  document.addEventListener("scroll", () => {
+    header.classList.toggle("sticky", window.scrollY > offset);
+  });
 }
