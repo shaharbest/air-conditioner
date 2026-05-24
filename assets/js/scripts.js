@@ -31,7 +31,4 @@ if (header) {
   updateScrollPadding();
   window.addEventListener("resize", updateScrollPadding);
 
-  document.addEventListener("scroll", () =>
-    header.classList.toggle("sticky", window.scrollY > header.offsetTop)
-  );
 }

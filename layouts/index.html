@@ -1,5 +1,29 @@
 {{ define "body_classes" }}page-home{{ end }}
 
+{{ define "header_css" }}
+<style>
+  .header { position: sticky; top: 0; }
+  @media (min-width: 768px) {
+    .intro {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+    .intro .position-relative {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .intro-image {
+      margin-top: 0;
+      height: 100%;
+      width: auto;
+      max-height: min(calc(100vh - 240px), 25rem);
+    }
+  }
+</style>
+{{ end }}
+
 {{ define "main" }}
 {{ partial "sections/hero.html" . }}
 {{ partial "sections/services.html" . }}
