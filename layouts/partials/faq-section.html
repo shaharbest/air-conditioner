@@ -1,0 +1,21 @@
+{{ if hugo.Data.faq.items }}
+<div id="faq" class="strip strip-grey">
+  <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-4">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8">
+        {{ range hugo.Data.faq.items }}
+        <div class="border-bottom pb-4 mb-2">
+          <h3>{{ .question }}</h3>
+          <p class="mb-0">{{ .answer }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
