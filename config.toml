@@ -1,6 +1,6 @@
 baseURL = "https://phillygreenclean.com/"
 theme = "hugo-serif-theme"
-languageCode = "en-us"
+locale = "en-us"
 title = "Philly Green Clean"
 timeZone = "America/New_York"
 enableGitInfo = true
@@ -48,14 +48,14 @@ disableKinds = ["taxonomy", "term"]
     weight = 1
 
   [[menu.main]]
-    name = "FAQ"
-    url = "/faq/"
-    weight = 3
-
-  [[menu.main]]
     name = "Hours"
     url = "/#hours"
-    weight = 4
+    weight = 2
+
+  [[menu.main]]
+    name = "FAQ"
+    url = "/#faq"
+    weight = 3
 
   [[menu.footer]]
     name = "Home"
@@ -74,5 +74,5 @@ disableKinds = ["taxonomy", "term"]
 
   [[menu.footer]]
     name = "FAQ"
-    url = "/faq/"
-    weight = 4
+    url = "/#faq"
+    weight = 5

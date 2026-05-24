@@ -61,14 +61,17 @@
 <div id="hours" class="strip">
   <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 text-center mb-4">
         <h2>Hours</h2>
-        <table class="table">
-          <thead><tr><th>Day</th><th>Hours</th></tr></thead>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4">
+        <table class="table table-borderless w-auto mx-auto">
           <tbody>
             {{ range hugo.Data.hours.hours }}
             <tr>
-              <td>{{ .day }}</td>
+              <td class="fw-bold pe-4">{{ .day }}</td>
               <td>{{ if .closed }}Closed{{ else }}{{ .opens }} – {{ .closes }}{{ end }}</td>
             </tr>
             {{ end }}
@@ -81,6 +84,28 @@
 {{ end }}
 
 {{ partial "testimonials.html" . }}
+
+{{ if hugo.Data.faq.items }}
+<div id="faq" class="strip strip-grey">
+  <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-4">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8">
+        {{ range hugo.Data.faq.items }}
+        <div class="border-bottom pb-4 mb-2">
+          <h3>{{ .question }}</h3>
+          <p class="mb-0">{{ .answer }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
 
 {{ end }}
 
