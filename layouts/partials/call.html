@@ -2,18 +2,34 @@
   <div class="call-box-top">
     {{ if hugo.Data.contact.phone }}
     <div class="call-phone">
-      <a href="tel:{{ hugo.Data.contact.phone | replaceRE "[^0-9+]" "" }}" data-location="hero">{{ hugo.Data.contact.phone }}</a>
+      <a
+        href="tel:{{ hugo.Data.contact.phone | replaceRE "[^0-9+]" "" }}"
+        data-location="hero"
+      >
+        {{ hugo.Data.contact.phone }}
+      </a>
     </div>
     {{ end }}
     {{ if hugo.Data.contact.email }}
     <div class="call-email">
-      <a href="mailto:{{ hugo.Data.contact.email }}" data-location="hero">{{ hugo.Data.contact.email }}</a>
+      <a
+        href="mailto:{{ hugo.Data.contact.email }}"
+        data-location="hero"
+      >
+        {{ hugo.Data.contact.email }}
+      </a>
     </div>
     {{ end }}
   </div>
   {{ if hugo.Data.contact.phone }}
   <div class="call-box-bottom">
-    <a href="tel:{{ hugo.Data.contact.phone | replaceRE "[^0-9+]" "" }}" class="button" data-location="hero-cta">Call for a Free Estimate</a>
+    <a
+      href="tel:{{ hugo.Data.contact.phone | replaceRE "[^0-9+]" "" }}"
+      class="button"
+      data-location="hero-cta"
+    >
+      Call for a Free Estimate
+    </a>
   </div>
   {{ end }}
 </div>
