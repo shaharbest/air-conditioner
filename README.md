@@ -7,7 +7,7 @@ Static business website for an air conditioner maintenance business.
 | Layer | Tool |
 |---|---|
 | Static site generator | [Hugo](https://gohugo.io/) v0.160.1 extended |
-| Theme | [Hugo Serif](https://github.com/zerostaticthemes/hugo-serif-theme) (git submodule at `themes/hugo-serif-theme`) |
+| Theme | [shahar-local-biz](https://github.com/shaharbest/shahar-local-biz) (git submodule at `themes/shahar-local-biz`) |
 | CMS | [Decap CMS](https://decapcms.org/) |
 | CMS auth | [DecapBridge](https://decapbridge.com/) (replaces deprecated Netlify Identity + Git Gateway) |
 | Hosting | [Netlify](https://netlify.com) — auto-deploys on push to `main` |
@@ -28,18 +28,12 @@ Static business website for an air conditioner maintenance business.
 │   ├── contact.yaml        # Phone + email — shown in header contact box
 │   ├── features.json       # 3 homepage feature cards {"features": [...]}
 │   └── social.json         # Social links (currently empty)
-├── layouts/                # Project-level template overrides (take precedence over theme)
-│   ├── index.html          # Homepage — fixes features.json structure + hugo.Data
-│   └── partials/
-│       ├── call.html       # Contact box partial — uses hugo.Data
-│       ├── social.html     # Social links partial — uses hugo.Data
-│       └── sub-footer.html # Footer partial — uses hugo.Data
 ├── static/
 │   ├── admin/              # Decap CMS admin panel
 │   │   ├── index.html      # CMS entry point (loads decap-cms JS from CDN)
 │   │   └── config.yml      # CMS collections config
-│   └── images/             # Site images (copied from theme exampleSite)
-├── themes/hugo-serif-theme/ # Theme as git submodule
+│   └── images/             # Site images
+├── themes/shahar-local-biz/ # Theme as git submodule
 └── netlify.toml            # Netlify build config (Hugo version, submodule strategy)
 ```
 
@@ -79,6 +73,27 @@ To invite a new CMS user: add them in the **DecapBridge dashboard** under the si
 
 DecapBridge site ID: `5b0cdc16-fdc7-4702-8b0b-138bc51697af`
 
+## Updating the theme
+
+All layouts and styles live in the [shahar-local-biz](https://github.com/shaharbest/shahar-local-biz) theme repo. The site repo pins the theme to a specific commit — it does not auto-follow changes.
+
+After pushing a change to the theme repo, update the pin in this repo:
+
+```bash
+# In the theme repo — commit and push your changes first
+git add .
+git commit -m "your change description"
+git push
+
+# In this repo — advance the submodule pointer to the new commit, then deploy
+git submodule update --remote themes/shahar-local-biz
+git add themes/shahar-local-biz
+git commit -m "Update theme"
+git push
+```
+
+The final `git push` triggers Netlify's deploy automatically.
+
 ## Deployment
 
 Netlify auto-deploys on every push to `main`. Build takes ~10s.
@@ -111,8 +126,7 @@ netlify logs                # stream deploy/function logs
 ## Known issues / gotchas
 
 - **Theme is a git submodule** — always clone with `--recurse-submodules`. Netlify handles this via `GIT_SUBMODULE_STRATEGY = "recursive"` in `netlify.toml`.
-- **Theme uses deprecated `.Site.Data`** — project-level overrides in `layouts/` replace the affected partials with `hugo.Data`. Do not delete the `layouts/` overrides.
-- **`data/features.json` is an object, not an array** — the theme's exampleSite uses a root-level array, but Decap CMS requires an object wrapper. The `layouts/index.html` override reads `hugo.Data.features.features` accordingly.
+- **`data/features.json` is an object, not an array** — Decap CMS requires an object wrapper; the theme reads `hugo.Data.features.features` accordingly.
 - **No contact form** — the contact page shows phone/email from `data/contact.yaml` but has no form submission. Add Netlify Forms if a form is needed.
 
 ## TODO / next steps
