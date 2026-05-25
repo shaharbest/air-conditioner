@@ -1,5 +1,4 @@
 baseURL = "https://phillygreenclean.com/"
-theme = "shahar-local-biz"
 locale = "en-us"
 title = "Philly Green Clean"
 timeZone = "America/New_York"
@@ -83,3 +82,7 @@ disableKinds = ["taxonomy", "term"]
     name = "FAQ"
     url = "/#faq"
     weight = 5
+
+[module]
+  [[module.imports]]
+    path = "github.com/shaharbest/shahar-local-biz"
