@@ -129,8 +129,3 @@ netlify logs                # stream deploy/function logs
 - **`data/features.json` is an object, not an array** — Decap CMS requires an object wrapper; the theme reads `hugo.Data.features.features` accordingly.
 - **No contact form** — the contact page shows phone/email from `data/contact.yaml` but has no form submission. Add Netlify Forms if a form is needed.
 
-## TODO / next steps
-
-- Replace placeholder phone and email in `data/contact.yaml` with real business info
-- Replace images in `static/images/` with real photos
-- Set up Google Analytics 4 + Tag Manager for call tracking (set `google_analytics_id` in `config.toml`)
