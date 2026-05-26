@@ -58,23 +58,6 @@ collections:
           - { label: "Hero Image Hide on Mobile", name: "intro_image_hide_on_mobile", widget: "boolean", default: true, required: false }
           - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "testimonials"
-    label: "Testimonials"
-    files:
-      - label: "Testimonials"
-        name: "testimonials"
-        file: "data/testimonials.json"
-        fields:
-          - label: "Testimonials"
-            name: "testimonials"
-            widget: "list"
-            required: false
-            fields:
-              - { label: "Quote", name: "quote", widget: "text" }
-              - { label: "Customer Name", name: "name", widget: "string", hint: "First name or alias, e.g. 'John D.' or 'Homeowner in South Philly'" }
-              - { label: "Neighborhood / City", name: "location", widget: "string", required: false }
-              - { label: "Service Used", name: "service", widget: "select", options: ["Air Duct Cleaning", "Dryer Vent Cleaning", "Chimney Cleaning"], required: false }
-
   - name: "faq"
     label: "FAQ"
     files:

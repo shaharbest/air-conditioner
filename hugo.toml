@@ -19,7 +19,7 @@ disableKinds = ["taxonomy", "term"]
   [params.homepage]
     sticky_header = true
     show_info_box = true
-    sections = ["hero", "services", "hours", "testimonials", "faq"]
+    sections = ["hero", "services", "hours", "faq"]
 
   [params.logo]
     desktop = "images/logo/logo.svg"
