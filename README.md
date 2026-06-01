@@ -7,7 +7,7 @@ Static business website for Philly Green Clean LLC — air duct, dryer vent, and
 | Layer | Tool |
 |---|---|
 | Static site generator | [Hugo](https://gohugo.io/) v0.160.1 extended |
-| Theme | [shahar-local-biz](https://github.com/shaharbest/shahar-local-biz) (Hugo module) |
+| Theme | [hugo-local-biz](https://github.com/shahar-baharal/hugo-local-biz) (Hugo module) |
 | CMS | [Decap CMS](https://decapcms.org/) |
 | CMS auth | [DecapBridge](https://decapbridge.com/) (PKCE OAuth via GitHub) |
 | Hosting | [Netlify](https://netlify.com) — auto-deploys on push to `main` |
@@ -77,13 +77,13 @@ DecapBridge site ID: `5b0cdc16-fdc7-4702-8b0b-138bc51697af`
 
 ## Updating the theme
 
-All layouts and styles live in the [shahar-local-biz](https://github.com/shaharbest/shahar-local-biz) theme repo.
+All layouts and styles live in the [hugo-local-biz](https://github.com/shahar-baharal/hugo-local-biz) theme repo.
 
 After pushing a change to the theme repo:
 
 ```bash
 # In this repo — pull the latest theme commit and deploy
-hugo mod get -u github.com/shaharbest/shahar-local-biz
+hugo mod get -u github.com/shahar-baharal/hugo-local-biz
 hugo mod tidy
 git add go.mod go.sum
 git commit -m "Update theme"
