@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  repo: shaharbest/air-conditioner
+  repo: shahar-baharal/philly-green-clean
   branch: main
   auth_type: pkce
   base_url: https://auth.decapbridge.com
