@@ -2,7 +2,7 @@ backend:
   name: github
   repo: shahar-baharal/philly-green-clean
   branch: main
-  base_url: https://api.sveltia.com
+  base_url: https://sveltia-cms-auth.shahar-baharal.workers.dev
 
 site_url: https://phillygreenclean.com
 
